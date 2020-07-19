@@ -14,4 +14,13 @@ class SampleTest {
 
         assertEquals("Hello TDD Boot Camp!", actual)
     }
+
+    @Test
+    fun `1 + 1は2を返す`() {
+        val sut = Smaple()
+
+        val actual = sut.plus(1, 1)
+
+        assertEquals(2, actual)
+    }
 }
