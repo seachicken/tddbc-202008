@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 
+// テスト
 class SampleTest {
     @Test
     @DisplayName("should return Hello TDD Boot Camp!")
