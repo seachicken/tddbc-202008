@@ -41,4 +41,16 @@ class ClosedRangeTest {
             ClosedRange(2, 1)
         }
     }
+
+    @Test
+    fun `下端点が1、上端点が3の整数閉区間オブジェクトに2を渡すと、範囲に含んでいると判定できること`() {
+        val sut = ClosedRange(1, 3)
+        assertEquals(true, sut.contains(2))
+    }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトに2を渡すと、範囲に含んでいると判定できること`() {
+        val sut = ClosedRange(1, 2)
+        assertEquals(true, sut.contains(2))
+    }
 }
