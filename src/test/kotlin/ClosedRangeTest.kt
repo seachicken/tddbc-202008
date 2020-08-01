@@ -71,4 +71,26 @@ class ClosedRangeTest {
         val sut = ClosedRange(1, 2)
         assertFalse(sut.contains(3))
     }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトと下端点が1、上端点が2の整数閉区間オブジェクトを比較すると等価と判定できること`() {
+        val sut1 = ClosedRange(1, 2)
+        val sut2 = ClosedRange(1, 2)
+        assertTrue(sut1 == sut2)
+    }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトと下端点が1、上端点が3の整数閉区間オブジェクトを比較すると等価でないと判定できること`() {
+        val sut1 = ClosedRange(1, 2)
+        val sut2 = ClosedRange(1, 3)
+        assertFalse(sut1 == sut2)
+    }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトと下端点が0、上端点が2の整数閉区間オブジェクトを比較すると等価でないと判定できること`() {
+        val sut1 = ClosedRange(1, 2)
+        val sut2 = ClosedRange(0, 2)
+        assertFalse(sut1 == sut2)
+    }
+
 }
