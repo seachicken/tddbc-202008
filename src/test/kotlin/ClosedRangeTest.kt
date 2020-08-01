@@ -93,4 +93,8 @@ class ClosedRangeTest {
         assertFalse(sut1 == sut2)
     }
 
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトと下端点が2、上端点が2の整数閉区間オブジェクトを比較すると含んでいると判定できること`() {
+        assertTrue(sut.contains(other))
+    }
 }
