@@ -1,10 +1,6 @@
-import java.lang.IllegalArgumentException
-
 data class ClosedRange(val lowerEndPoint: Int, val upperEndPoint: Int) {
     init {
-        if (lowerEndPoint > upperEndPoint) {
-            throw IllegalArgumentException()
-        }
+        require(lowerEndPoint <= upperEndPoint)
     }
 
     override fun toString(): String {

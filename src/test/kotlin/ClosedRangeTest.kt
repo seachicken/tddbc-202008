@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
@@ -45,12 +45,30 @@ class ClosedRangeTest {
     @Test
     fun `下端点が1、上端点が3の整数閉区間オブジェクトに2を渡すと、範囲に含んでいると判定できること`() {
         val sut = ClosedRange(1, 3)
-        assertEquals(true, sut.contains(2))
+        assertTrue(sut.contains(2))
     }
 
     @Test
     fun `下端点が1、上端点が2の整数閉区間オブジェクトに2を渡すと、範囲に含んでいると判定できること`() {
         val sut = ClosedRange(1, 2)
-        assertEquals(true, sut.contains(2))
+        assertTrue(sut.contains(2))
+    }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトに1を渡すと、範囲に含んでいると判定できること`() {
+        val sut = ClosedRange(1, 2)
+        assertTrue(sut.contains(1))
+    }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトに0を渡すと、範囲に含んでいないと判定できること`() {
+        val sut = ClosedRange(1, 2)
+        assertFalse(sut.contains(0))
+    }
+
+    @Test
+    fun `下端点が1、上端点が2の整数閉区間オブジェクトに3を渡すと、範囲に含んでいないと判定できること`() {
+        val sut = ClosedRange(1, 2)
+        assertFalse(sut.contains(3))
     }
 }
