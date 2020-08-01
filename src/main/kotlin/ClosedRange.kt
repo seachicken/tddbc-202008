@@ -10,4 +10,8 @@ data class ClosedRange(val lowerEndPoint: Int, val upperEndPoint: Int) {
     fun contains(value: Int): Boolean {
         return (lowerEndPoint..upperEndPoint).contains(value)
     }
+
+    fun contains(other: ClosedRange): Boolean {
+        return contains(other.lowerEndPoint) && contains(other.upperEndPoint)
+    }
 }
