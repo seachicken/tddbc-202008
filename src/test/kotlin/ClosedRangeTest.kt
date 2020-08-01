@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 import org.junit.jupiter.api.assertThrows
 
 class ClosedRangeTest {
@@ -25,6 +26,13 @@ class ClosedRangeTest {
     fun `下端点が2、上端点が3の整数閉区間オブジェクトは、［2,3］を返す`() {
         val sut = ClosedRange(2, 3)
         assertEquals("[2,3]", sut.toString())
+    }
+
+    @Test
+    fun `下端点が上端点が同値の整数閉区間オブジェクトは生成できること`() {
+        assertDoesNotThrow {
+            ClosedRange(1, 1)
+        }
     }
 
     @Test
